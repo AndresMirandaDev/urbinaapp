@@ -1,5 +1,6 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import AppText from '../components/AppText';
 import LogoSvg from '../components/LogoSvg';
@@ -20,8 +21,20 @@ export default function WelcomeScreen() {
       </View>
       <View style={styles.copyright}>
         <AppText style={styles.copyrightText}>
-          Developed by <AppText>Aklass</AppText>
+          Developed by Ak
+          <AppText
+            style={{
+              fontSize: 15,
+              color: '#ff9f40',
+              fontWeight: 'bold',
+              fontStyle: 'italic',
+            }}
+          >
+            l
+          </AppText>
+          ass
         </AppText>
+        <MaterialCommunityIcons name="copyright" />
       </View>
     </ImageBackground>
   );
@@ -38,9 +51,13 @@ const styles = StyleSheet.create({
   },
   copyright: {
     marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   copyrightText: {
     fontSize: 15,
+    marginRight: 5,
   },
   logoContainer: {
     position: 'absolute',
