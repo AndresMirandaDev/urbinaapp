@@ -7,4 +7,9 @@ export default {
     color: colors.dark,
   },
   colors,
+  heading: {
+    fontSize: 25,
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+    fontWeight: 'bold',
+  },
 };
