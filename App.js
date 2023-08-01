@@ -1,15 +1,17 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
-import Screen from './components/Screen';
+import 'react-native-gesture-handler';
+
 import colors from './config/colors';
-import appStyles from './config/styles';
-import WelcomeScreen from './screens/WelcomeScreen';
-import AppTextInput from './components/forms/AppTextInput';
-import AppForm from './components/forms/AppForm';
-import AppFormField from './components/forms/AppFormField';
-import LoginScreen from './screens/LoginScreen';
+import HomeScreen from './screens/HomeScreen';
+import AppNavigator from './navigation/AppNavigator';
 
 export default function App() {
-  return <LoginScreen />;
+  return (
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
