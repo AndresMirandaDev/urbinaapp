@@ -13,7 +13,7 @@ export default function DrawerToggleButton({ onPress }) {
         <MaterialCommunityIcons
           name={isDrawerOpen ? 'close' : 'menu'}
           size={40}
-          color={colors.light}
+          color={colors.secondary}
         />
       </View>
     </TouchableOpacity>
@@ -31,5 +31,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginHorizontal: 15,
+    backgroundColor: colors.light,
+    padding: 5,
+    borderRadius: 60,
   },
 });
