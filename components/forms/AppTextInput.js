@@ -27,7 +27,7 @@ export default function AppTextInput({ icon, width = '100%', ...otherProps }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: appStyles.colors.light,
-    borderRadius: 2,
+
     width: '100%',
     flexDirection: 'row',
     marginVertical: 10,

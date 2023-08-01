@@ -10,6 +10,9 @@ import colors from '../config/colors';
 import SubmitButton from '../components/forms/SubmitButton';
 
 export default function LoginScreen() {
+  const handleSubmit = () => {
+    console.log('submit pressed');
+  };
   return (
     <ImageBackground
       source={require('../assets/background.jpeg')}
@@ -31,6 +34,7 @@ export default function LoginScreen() {
             name: '',
             password: '',
           }}
+          onSubmit={handleSubmit}
         >
           <AppFormField name="name" placeholder="Nombre" icon="account" />
           <AppFormField name="password" placeholder="Contraseña" icon="lock" />
