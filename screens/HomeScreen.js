@@ -4,24 +4,34 @@ import React from 'react';
 import Screen from '../components/Screen';
 import LogoSvg from '../components/LogoSvg';
 import colors from '../config/colors';
+import AppText from '../components/AppText';
+import WelcomeMessage from '../components/homescreen/WelcomeMessage';
+import VisitInfo from '../components/homescreen/VisitInfo';
 
 export default function HomeScreen() {
   return (
     <Screen>
-      <View style={styles.container}></View>
+      <View style={styles.container}>
+        <WelcomeMessage />
+      </View>
+      <View style={styles.content}>
+        <VisitInfo />
+      </View>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
+    backgroundColor: colors.light,
   },
-  headbar: {
+  content: {
+    flex: 1,
+    height: 100,
+    borderRadius: 30,
+    bottom: 30,
     backgroundColor: colors.secondary,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 20,
   },
 });

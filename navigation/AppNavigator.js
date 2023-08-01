@@ -35,8 +35,8 @@ export default function AppNavigator({ navigation }) {
         },
       }}
     >
-      <Drawer.Screen name="Feed" component={HomeScreen} />
-      <Drawer.Screen name="Article" component={LoginScreen} />
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Other" component={LoginScreen} />
     </Drawer.Navigator>
   );
 }
