@@ -6,6 +6,7 @@ import LoginScreen from '../screens/LoginScreen';
 import colors from '../config/colors';
 import HeadBar from '../components/HeadBar';
 import DrawerToggleButton from '../components/DrawerToggleButton';
+import BottomTabNavigator from './BottomTabNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -35,7 +36,7 @@ export default function AppNavigator({ navigation }) {
         },
       }}
     >
-      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Home" component={BottomTabNavigator} />
       <Drawer.Screen name="Other" component={LoginScreen} />
     </Drawer.Navigator>
   );

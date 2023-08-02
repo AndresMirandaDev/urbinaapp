@@ -23,11 +23,7 @@ export default function LoginScreen() {
       <View style={styles.logoContainer}>
         <LogoSvg width={200} height={200} />
       </View>
-      <View>
-        <AppText style={[appStyles.heading, { color: colors.dark }]}>
-          Inicia Sesión
-        </AppText>
-      </View>
+
       <View style={styles.loginForm}>
         <AppForm
           initialValues={{

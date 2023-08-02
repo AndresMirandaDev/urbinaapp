@@ -13,7 +13,7 @@ export default function DrawerToggleButton({ onPress }) {
         <MaterialCommunityIcons
           name={isDrawerOpen ? 'close' : 'menu'}
           size={40}
-          color={colors.secondary}
+          color={colors.primary}
         />
       </View>
     </TouchableOpacity>

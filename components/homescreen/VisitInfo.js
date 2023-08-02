@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -11,7 +17,7 @@ export default function VisitInfo() {
     <View style={styles.container}>
       <View style={styles.heading}>
         <AppText
-          style={[appStyles.heading, { color: colors.light, padding: 20 }]}
+          style={[appStyles.heading, { color: colors.primary, padding: 20 }]}
         >
           Siguiente cita
         </AppText>
@@ -19,23 +25,33 @@ export default function VisitInfo() {
           <MaterialCommunityIcons
             name="calendar"
             size={50}
-            color={colors.light}
+            color={colors.primary}
           />
         </View>
       </View>
       <View style={styles.date}>
         <AppText style={{ color: colors.light, fontSize: 50 }}>1 Enero</AppText>
       </View>
+      <TouchableOpacity
+        onPress={() => {
+          console.log('ir a citas pressed');
+        }}
+      >
+        <View style={styles.redirectLink}>
+          <AppText>Ir a citas</AppText>
+          <MaterialCommunityIcons name="chevron-right" size={30} />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.secondaryOpacity,
     paddingTop: 20,
     paddingRight: 20,
-    borderRadius: 10,
+    borderRadius: 24,
   },
   date: {
     justifyContent: 'center',
@@ -49,5 +65,11 @@ const styles = StyleSheet.create({
   heading: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  redirectLink: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    padding: 10,
   },
 });

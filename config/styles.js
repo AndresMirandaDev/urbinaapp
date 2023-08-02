@@ -8,8 +8,7 @@ export default {
   },
   colors,
   heading: {
-    fontSize: 25,
+    fontSize: 33,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
-    fontWeight: 'bold',
   },
 };
