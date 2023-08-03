@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import * as Device from 'expo-device';
+import colors from '../config/colors';
 
 export default function Screen({ children, style }) {
   return (

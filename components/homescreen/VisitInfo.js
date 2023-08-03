@@ -23,14 +23,14 @@ export default function VisitInfo() {
         </AppText>
         <View style={styles.icon}>
           <MaterialCommunityIcons
-            name="calendar"
+            name="calendar-check"
             size={50}
             color={colors.primary}
           />
         </View>
       </View>
       <View style={styles.date}>
-        <AppText style={{ color: colors.light, fontSize: 50 }}>1 Enero</AppText>
+        <AppText style={{ color: colors.light, fontSize: 30 }}>1 Enero</AppText>
       </View>
       <TouchableOpacity
         onPress={() => {
@@ -48,7 +48,7 @@ export default function VisitInfo() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.secondaryOpacity,
+    backgroundColor: colors.secondary,
     paddingTop: 20,
     paddingRight: 20,
     borderRadius: 24,

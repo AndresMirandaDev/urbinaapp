@@ -1,5 +1,6 @@
 export default {
   primary: '#0A2240',
+  primaryOpacity: 'rgba(2,0,36,0.7497373949579832)',
   secondary: '#02d4ac',
   secondaryOpacity: '#50e9cc',
   black: '#000',
