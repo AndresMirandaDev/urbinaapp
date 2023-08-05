@@ -22,28 +22,34 @@ export default function UserInfo() {
         <AppText style={styles.username}>Usuario</AppText>
         <View style={styles.infoIcons}>
           <View style={styles.iconStyle}>
-            <MaterialCommunityIcons
-              name="phone"
-              size={50}
-              color={colors.secondary}
-            />
-            <AppText style={styles.infoText}>+56123456789</AppText>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <MaterialCommunityIcons
+                name="phone"
+                size={50}
+                color={colors.secondary}
+              />
+              <AppText style={styles.infoText}>+56123456789</AppText>
+            </View>
           </View>
           <View style={styles.iconStyle}>
-            <MaterialCommunityIcons
-              name="email"
-              size={50}
-              color={colors.secondary}
-            />
-            <AppText style={styles.infoText}>somemail@gmail.com</AppText>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <MaterialCommunityIcons
+                name="email"
+                size={50}
+                color={colors.secondary}
+              />
+              <AppText style={styles.infoText}>somemail@gmail.com</AppText>
+            </View>
           </View>
           <View style={styles.iconStyle}>
-            <MaterialCommunityIcons
-              name="information-variant"
-              size={50}
-              color={colors.secondary}
-            />
-            <AppText style={styles.infoText}>Actualizar mis datos</AppText>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <MaterialCommunityIcons
+                name="information-variant"
+                size={50}
+                color={colors.secondary}
+              />
+              <AppText style={styles.infoText}>Actualizar mis datos</AppText>
+            </View>
             <MaterialCommunityIcons
               name="chevron-right"
               size={40}
@@ -51,17 +57,21 @@ export default function UserInfo() {
             />
           </View>
           <View style={styles.iconStyle}>
-            <MaterialCommunityIcons
-              name="history"
-              size={50}
-              color={colors.secondary}
-            />
-            <AppText style={styles.infoText}>Historial de citas</AppText>
-            <MaterialCommunityIcons
-              name="chevron-right"
-              size={40}
-              color={colors.secondary}
-            />
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <MaterialCommunityIcons
+                name="history"
+                size={50}
+                color={colors.secondary}
+              />
+              <AppText style={styles.infoText}>Historial de citas</AppText>
+            </View>
+            <View>
+              <MaterialCommunityIcons
+                name="chevron-right"
+                size={40}
+                color={colors.secondary}
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -93,6 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     margin: 10,
+    justifyContent: 'space-between',
   },
   infoIcons: {
     marginTop: 20,
