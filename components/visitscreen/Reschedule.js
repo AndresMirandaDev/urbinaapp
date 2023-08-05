@@ -1,21 +1,22 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import LottieView from 'lottie-react-native';
 
+import LottieView from 'lottie-react-native';
 import colors from '../../config/colors';
 import AppText from '../AppText';
 
-export default function Announcements() {
+export default function Reschedule() {
   return (
     <View style={styles.container}>
       <View style={styles.insideContainer}>
-        <AppText style={styles.heading}>Avisos</AppText>
+        <AppText style={styles.headText}>Reagendar cita</AppText>
         <LottieView
-          source={require('../../assets/animations/alertlottie.json')}
+          source={require('../../assets/animations/reschedulelottie.json')}
           autoPlay
           loop
-          resizeMode="cover"
-          speed={0.5}
+          autoSize
+          style={{ marginTop: 20 }}
+          speed={0.3}
         />
       </View>
     </View>
@@ -24,22 +25,20 @@ export default function Announcements() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.secondary,
     flex: 1,
-    padding: 10,
+    backgroundColor: colors.secondary,
+    margin: 4,
     borderRadius: 30,
-    margin: 2,
+  },
+  headText: {
+    textAlign: 'center',
+    color: colors.light,
+    fontWeight: 500,
+    fontSize: 25,
   },
   insideContainer: {
-    backgroundColor: colors.secondary,
     padding: 20,
-    borderRadius: 10,
-    flex: 1,
-  },
-  heading: {
-    textAlign: 'center',
-    fontSize: 21,
-    color: colors.light,
-    fontWeight: '500',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

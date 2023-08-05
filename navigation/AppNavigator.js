@@ -1,12 +1,13 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import HomeScreen from '../screens/HomeScreen';
-import LoginScreen from '../screens/LoginScreen';
 import colors from '../config/colors';
 import HeadBar from '../components/HeadBar';
-import DrawerToggleButton from '../components/DrawerToggleButton';
+
 import BottomTabNavigator from './BottomTabNavigator';
+import RegisterPatientScreen from '../screens/RegisterPatientScreen';
+
+import VisitsScreen from '../screens/VisitsScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -36,8 +37,12 @@ export default function AppNavigator({ navigation }) {
         },
       }}
     >
-      <Drawer.Screen name="Home" component={BottomTabNavigator} />
-      <Drawer.Screen name="Other" component={LoginScreen} />
+      <Drawer.Screen name="Inicio" component={BottomTabNavigator} />
+      <Drawer.Screen
+        name="Registro de pacientes"
+        component={RegisterPatientScreen}
+      />
+      <Drawer.Screen name="Citas" component={VisitsScreen} />
     </Drawer.Navigator>
   );
 }

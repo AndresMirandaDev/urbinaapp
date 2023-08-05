@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import colors from '../config/colors';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,8 +26,8 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="welcome"
-        component={WelcomeScreen}
+        name="profile"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => {
             return (
