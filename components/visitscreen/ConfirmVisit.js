@@ -3,20 +3,23 @@ import React from 'react';
 import colors from '../../config/colors';
 import AppText from '../AppText';
 import LottieView from 'lottie-react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function ConfirmVisit() {
+export default function ConfirmVisit({ onPress }) {
   return (
     <View style={styles.container}>
-      <View style={styles.insideContainer}>
-        <AppText style={styles.headText}>Confirmar Cita</AppText>
-        <LottieView
-          source={require('../../assets/animations/check.json')}
-          loop
-          autoPlay
-          autoSize
-          speed={0.5}
-        />
-      </View>
+      <TouchableOpacity onPress={onPress}>
+        <View style={styles.insideContainer}>
+          <AppText style={styles.headText}>Confirmar Cita</AppText>
+          <LottieView
+            source={require('../../assets/animations/check.json')}
+            loop
+            autoPlay
+            autoSize
+            speed={0.5}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

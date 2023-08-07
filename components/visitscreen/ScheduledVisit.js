@@ -57,5 +57,6 @@ const styles = StyleSheet.create({
     marginRight: 40,
     borderBottomRightRadius: 40,
     borderTopRightRadius: 40,
+    borderBottomLeftRadius: 40,
   },
 });

@@ -4,6 +4,11 @@ import React from 'react';
 import LogoSvg from './LogoSvg';
 import colors from '../config/colors';
 import DrawerToggleButton from './DrawerToggleButton';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+} from 'react-native-gesture-handler';
 
 export default function HeadBar({ onPress }) {
   return (
@@ -14,11 +19,25 @@ export default function HeadBar({ onPress }) {
       <View style={styles.logo}>
         <LogoSvg height={100} width={100} style={{ top: 20 }} />
       </View>
+      <View style={styles.alertButton}>
+        <TouchableWithoutFeedback
+          onPress={() => {
+            console.log('alert button pressed');
+          }}
+        >
+          <MaterialCommunityIcons name="bell" size={30} color={colors.light} />
+        </TouchableWithoutFeedback>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  alertButton: {
+    alignItems: 'center',
+    marginLeft: 90,
+    top: 20,
+  },
   headbar: {
     backgroundColor: colors.secondary,
     width: '100%',
@@ -29,6 +48,6 @@ const styles = StyleSheet.create({
     top: 30,
   },
   logo: {
-    marginLeft: 60,
+    marginLeft: 70,
   },
 });

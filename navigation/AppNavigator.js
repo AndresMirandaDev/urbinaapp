@@ -7,7 +7,8 @@ import HeadBar from '../components/HeadBar';
 import BottomTabNavigator from './BottomTabNavigator';
 import RegisterPatientScreen from '../screens/RegisterPatientScreen';
 
-import VisitsScreen from '../screens/VisitsScreen';
+import VisitsScreen from '../screens/visitScreens/VisitsScreen';
+import VisitsNavigator from './VisitsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -42,7 +43,7 @@ export default function AppNavigator({ navigation }) {
         name="Registro de pacientes"
         component={RegisterPatientScreen}
       />
-      <Drawer.Screen name="Citas" component={VisitsScreen} />
+      <Drawer.Screen name="Citas" component={VisitsNavigator} />
     </Drawer.Navigator>
   );
 }
