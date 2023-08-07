@@ -27,12 +27,12 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   actions: {
-    flex: 1.2,
     backgroundColor: colors.light,
     borderRadius: 30,
     padding: 15,
     flexDirection: 'row',
     bottom: 20,
+    flex: 1,
   },
   container: {
     alignItems: 'center',
