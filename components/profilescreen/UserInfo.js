@@ -5,9 +5,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import colors from '../../config/colors';
 import AppText from '../AppText';
-import App from '../../App';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 export default function UserInfo() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -20,6 +23,7 @@ export default function UserInfo() {
       <View style={styles.userInfo}>
         <MaterialCommunityIcons name="account" size={90} color={colors.light} />
         <AppText style={styles.username}>Usuario</AppText>
+        <AppText style={styles.idNumber}>RUN 10-000-000-0</AppText>
         <View style={styles.infoIcons}>
           <View style={styles.iconStyle}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -41,21 +45,25 @@ export default function UserInfo() {
               <AppText style={styles.infoText}>somemail@gmail.com</AppText>
             </View>
           </View>
-          <View style={styles.iconStyle}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <TouchableWithoutFeedback
+            onPress={() => navigation.navigate('editMyInfo')}
+          >
+            <View style={styles.iconStyle}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <MaterialCommunityIcons
+                  name="information-variant"
+                  size={50}
+                  color={colors.secondary}
+                />
+                <AppText style={styles.infoText}>Actualizar mis datos</AppText>
+              </View>
               <MaterialCommunityIcons
-                name="information-variant"
-                size={50}
+                name="chevron-right"
+                size={40}
                 color={colors.secondary}
               />
-              <AppText style={styles.infoText}>Actualizar mis datos</AppText>
             </View>
-            <MaterialCommunityIcons
-              name="chevron-right"
-              size={40}
-              color={colors.secondary}
-            />
-          </View>
+          </TouchableWithoutFeedback>
           <View style={styles.iconStyle}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <MaterialCommunityIcons
@@ -104,6 +112,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 10,
     justifyContent: 'space-between',
+  },
+  idNumber: {
+    color: colors.light,
   },
   infoIcons: {
     marginTop: 20,

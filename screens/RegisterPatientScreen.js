@@ -14,7 +14,9 @@ export default function RegisterPatientScreen() {
     <Screen>
       <View style={styles.formContainer}>
         <View style={styles.head}>
-          <AppText style={styles.headText}>Registrar nuevo paciente</AppText>
+          <AppText style={appStyles.subHeading}>
+            Registrar nuevo paciente
+          </AppText>
         </View>
         <AppForm
           initialValues={{
@@ -53,12 +55,9 @@ const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: colors.white,
     flex: 1,
-    padding: 20,
+    padding: 30,
   },
   head: {
     margin: 10,
-  },
-  headText: {
-    fontSize: 20,
   },
 });

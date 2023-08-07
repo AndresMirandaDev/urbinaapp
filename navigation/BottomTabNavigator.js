@@ -6,6 +6,8 @@ import HomeScreen from '../screens/HomeScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import colors from '../config/colors';
 import ProfileScreen from '../screens/ProfileScreen';
+import EditMyInfoScreen from '../screens/myprofileScreens/EditMyInfoScreen';
+import MyProfileNavigator from './MyProfileNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +29,7 @@ export default function BottomTabNavigator() {
       />
       <Tab.Screen
         name="profile"
-        component={ProfileScreen}
+        component={MyProfileNavigator}
         options={{
           tabBarIcon: ({ color }) => {
             return (

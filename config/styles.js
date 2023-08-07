@@ -11,4 +11,9 @@ export default {
     fontSize: 33,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
   },
+  subHeading: {
+    fontSize: 20,
+    fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+  },
+  screenPadding: 30,
 };

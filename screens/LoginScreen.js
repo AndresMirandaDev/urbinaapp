@@ -33,7 +33,13 @@ export default function LoginScreen() {
           onSubmit={handleSubmit}
         >
           <AppFormField name="name" placeholder="Nombre" icon="account" />
-          <AppFormField name="password" placeholder="Contraseña" icon="lock" />
+          <AppFormField
+            name="password"
+            placeholder="Contraseña"
+            icon="lock"
+            secureTextEntry
+            textContentType="password"
+          />
           <View style={styles.buttonContainer}>
             <SubmitButton title="Iniciar sesión" />
           </View>

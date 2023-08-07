@@ -5,6 +5,8 @@ import 'react-native-gesture-handler';
 import colors from './config/colors';
 import HomeScreen from './screens/HomeScreen';
 import AppNavigator from './navigation/AppNavigator';
+import WelcomeScreen from './screens/WelcomeScreen';
+import LoginScreen from './screens/LoginScreen';
 
 export default function App() {
   return (
