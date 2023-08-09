@@ -11,13 +11,15 @@ export default function Recommendations({ onPress }) {
       <View style={styles.container}>
         <View style={styles.insideContainer}>
           <AppText style={styles.heading}>Cuidados</AppText>
-          <LottieView
-            source={require('../../assets/animations/careanimation.json')}
-            loop
-            autoPlay
-            speed={0.5}
-            resizeMode="cover"
-          />
+          <View style={styles.animation}>
+            <LottieView
+              source={require('../../assets/animations/careanimation.json')}
+              loop
+              autoPlay
+              speed={0.5}
+              resizeMode="cover"
+            />
+          </View>
         </View>
       </View>
     </TouchableOpacity>
@@ -25,6 +27,14 @@ export default function Recommendations({ onPress }) {
 }
 
 const styles = StyleSheet.create({
+  animation: {
+    height: 200,
+    width: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    flex: 1,
+  },
   container: {
     backgroundColor: colors.secondary,
     flex: 1,

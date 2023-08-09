@@ -14,13 +14,15 @@ export default function Announcements({ onPress }) {
         <View style={styles.insideContainer}>
           <AppText style={styles.heading}>Avisos</AppText>
           {Device.osName === 'iOS' ? (
-            <LottieView
-              source={require('../../assets/animations/alertlottie.json')}
-              autoPlay
-              loop
-              resizeMode="cover"
-              speed={0.5}
-            />
+            <View style={styles.animation}>
+              <LottieView
+                source={require('../../assets/animations/alertlottie.json')}
+                autoPlay
+                loop
+                resizeMode="cover"
+                speed={0.5}
+              />
+            </View>
           ) : (
             <MaterialCommunityIcons
               name="message-alert-outline"
@@ -35,6 +37,14 @@ export default function Announcements({ onPress }) {
 }
 
 const styles = StyleSheet.create({
+  animation: {
+    height: 200,
+    width: 200,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
   container: {
     backgroundColor: colors.secondary,
     flex: 1,
