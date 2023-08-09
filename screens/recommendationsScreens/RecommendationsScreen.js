@@ -22,6 +22,11 @@ export default function RecommendationsScreen() {
         end={{ x: 1, y: 1 }}
         style={styles.background}
       />
+      <View style={styles.header}>
+        <AppText style={[appStyles.subHeading, { color: colors.light }]}>
+          Recomendaciones y cuidados.
+        </AppText>
+      </View>
       <ScrollView style={styles.container}>
         <View>
           <View style={styles.info}>
@@ -145,6 +150,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.primaryOpacity,
   },
+  header: {
+    padding: 20,
+    backgroundColor: colors.primaryOpacity,
+  },
+
   icon: {
     marginRight: 10,
     marginLeft: -10,
