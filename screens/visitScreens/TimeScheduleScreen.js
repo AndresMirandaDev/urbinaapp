@@ -1,5 +1,5 @@
-import { StyleSheet, FlatList, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, FlatList, View, Alert } from 'react-native';
+import React, { useState } from 'react';
 
 import Screen from '../../components/Screen';
 import AppText from '../../components/AppText';
@@ -28,11 +28,15 @@ export default function TimeScheduleScreen({ route }) {
   const weekday = useWeekDay(date);
   const dateDay = date.getDate();
 
+  const [showModal, setShowModal] = useState(true);
+
+  const handlePress = () => {};
+
   return (
     <Screen>
       <View style={styles.container}>
         <LinearGradient
-          colors={[colors.primary, colors.secondary]}
+          colors={[colors.secondary, colors.light]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.background}
@@ -49,7 +53,7 @@ export default function TimeScheduleScreen({ route }) {
               return item.id;
             }}
             renderItem={({ item }) => {
-              return <AvailableHoursSchedule schedule={item} />;
+              return <AvailableHoursSchedule schedule={item} date={date} />;
             }}
           />
         </View>
@@ -70,8 +74,11 @@ const styles = StyleSheet.create({
     padding: appStyles.screenPadding,
     justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
   },
   scheduleContainer: {
     marginTop: 20,
+    flex: 1,
+    minWidth: '100%',
   },
 });
