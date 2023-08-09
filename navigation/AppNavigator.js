@@ -17,6 +17,7 @@ export default function AppNavigator({ navigation }) {
   return (
     <Drawer.Navigator
       screenOptions={{
+        swipeEdgeWidth: 0,
         headerTitle: '',
         drawerActiveBackgroundColor: colors.secondary,
         headerBackground: () => {
