@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import LottieView from 'lottie-react-native';
 import * as Device from 'expo-device';
@@ -7,28 +7,30 @@ import colors from '../../config/colors';
 import AppText from '../AppText';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function Announcements() {
+export default function Announcements({ onPress }) {
   return (
-    <View style={styles.container}>
-      <View style={styles.insideContainer}>
-        <AppText style={styles.heading}>Avisos</AppText>
-        {Device.osName === 'iOS' ? (
-          <LottieView
-            source={require('../../assets/animations/alertlottie.json')}
-            autoPlay
-            loop
-            resizeMode="cover"
-            speed={0.5}
-          />
-        ) : (
-          <MaterialCommunityIcons
-            name="message-alert-outline"
-            size={130}
-            color={colors.primaryOpacity}
-          />
-        )}
+    <TouchableOpacity style={{ flex: 1 }} onPress={onPress}>
+      <View style={styles.container}>
+        <View style={styles.insideContainer}>
+          <AppText style={styles.heading}>Avisos</AppText>
+          {Device.osName === 'iOS' ? (
+            <LottieView
+              source={require('../../assets/animations/alertlottie.json')}
+              autoPlay
+              loop
+              resizeMode="cover"
+              speed={0.5}
+            />
+          ) : (
+            <MaterialCommunityIcons
+              name="message-alert-outline"
+              size={130}
+              color={colors.primaryOpacity}
+            />
+          )}
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

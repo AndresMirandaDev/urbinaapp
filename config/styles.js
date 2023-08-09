@@ -1,6 +1,13 @@
 import colors from './colors';
 
 export default {
+  gradientBackground: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+  },
   text: {
     fontSize: 18,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',

@@ -8,6 +8,9 @@ import colors from '../config/colors';
 import ProfileScreen from '../screens/ProfileScreen';
 import EditMyInfoScreen from '../screens/myprofileScreens/EditMyInfoScreen';
 import MyProfileNavigator from './MyProfileNavigator';
+import Recommendations from '../components/homescreen/Recommendations';
+import RecommendationsScreen from '../screens/recommendationsScreens/RecommendationsScreen';
+import HomeNavigator from './HomeNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +19,7 @@ export default function BottomTabNavigator() {
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="home"
-        component={HomeScreen}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => {
             return (

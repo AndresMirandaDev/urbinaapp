@@ -36,13 +36,13 @@ export default function TimeScheduleScreen({ route }) {
     <Screen>
       <View style={styles.container}>
         <LinearGradient
-          colors={[colors.secondary, colors.light]}
+          colors={[colors.secondaryOpacity, colors.light]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.background}
         />
         <View>
-          <AppText style={[appStyles.subHeading, { color: colors.light }]}>
+          <AppText style={[appStyles.subHeading]}>
             Horas Dispoibles {weekday} {dateDay} {month}
           </AppText>
         </View>
@@ -63,13 +63,7 @@ export default function TimeScheduleScreen({ route }) {
 }
 
 const styles = StyleSheet.create({
-  background: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  },
+  background: appStyles.gradientBackground,
   container: {
     padding: appStyles.screenPadding,
     justifyContent: 'center',

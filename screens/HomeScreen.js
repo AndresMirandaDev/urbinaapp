@@ -7,8 +7,9 @@ import WelcomeMessage from '../components/homescreen/WelcomeMessage';
 import VisitInfo from '../components/homescreen/VisitInfo';
 import Recommendations from '../components/homescreen/Recommendations';
 import Announcements from '../components/homescreen/Announcements';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <Screen>
       <View style={styles.container}>
@@ -18,7 +19,11 @@ export default function HomeScreen() {
         <VisitInfo />
       </View>
       <View style={styles.actions}>
-        <Recommendations />
+        <Recommendations
+          onPress={() => {
+            navigation.navigate('recommendations');
+          }}
+        />
         <Announcements />
       </View>
     </Screen>

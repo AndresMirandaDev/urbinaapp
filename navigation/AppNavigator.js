@@ -1,4 +1,4 @@
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { DrawerContent, createDrawerNavigator } from '@react-navigation/drawer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import colors from '../config/colors';
@@ -9,6 +9,7 @@ import RegisterPatientScreen from '../screens/RegisterPatientScreen';
 
 import VisitsScreen from '../screens/visitScreens/VisitsScreen';
 import VisitsNavigator from './VisitsNavigator';
+import RecommendationsScreen from '../screens/recommendationsScreens/RecommendationsScreen';
 
 const Drawer = createDrawerNavigator();
 

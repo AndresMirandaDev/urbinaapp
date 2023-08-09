@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   toggleButton: {
-    top: 30,
+    top: 20,
   },
   logo: {
     marginLeft: 70,

@@ -8,10 +8,17 @@ import colors from '../config/colors';
 import SubmitButton from '../components/forms/SubmitButton';
 import AppText from '../components/AppText';
 import appStyles from '../config/styles';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function RegisterPatientScreen() {
   return (
     <Screen>
+      <LinearGradient
+        colors={[colors.white, colors.secondaryOpacity]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.background}
+      />
       <View style={styles.formContainer}>
         <View style={styles.head}>
           <AppText style={appStyles.subHeading}>
@@ -49,11 +56,11 @@ export default function RegisterPatientScreen() {
 }
 
 const styles = StyleSheet.create({
+  background: appStyles.gradientBackground,
   buttonContainer: {
     marginTop: 0,
   },
   formContainer: {
-    backgroundColor: colors.white,
     flex: 1,
     padding: 30,
   },

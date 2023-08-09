@@ -1,23 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import LottieView from 'lottie-react-native';
 
 import AppText from '../AppText';
 import colors from '../../config/colors';
 
-export default function Recommendations() {
+export default function Recommendations({ onPress }) {
   return (
-    <View style={styles.container}>
-      <View style={styles.insideContainer}>
-        <AppText style={styles.heading}>Cuidados</AppText>
-        <LottieView
-          source={require('../../assets/animations/careanimation.json')}
-          loop
-          autoPlay
-          speed={0.5}
-        />
+    <TouchableOpacity style={{ flex: 1 }} onPress={onPress}>
+      <View style={styles.container}>
+        <View style={styles.insideContainer}>
+          <AppText style={styles.heading}>Cuidados</AppText>
+          <LottieView
+            source={require('../../assets/animations/careanimation.json')}
+            loop
+            autoPlay
+            speed={0.5}
+            resizeMode="cover"
+          />
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

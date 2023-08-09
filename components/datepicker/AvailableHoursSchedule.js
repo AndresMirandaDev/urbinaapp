@@ -2,12 +2,12 @@ import { Alert, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import LottieView from 'lottie-react-native';
 import * as Device from 'expo-device';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Modal } from 'react-native';
 
 import AppText from '../AppText';
 import colors from '../../config/colors';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Modal } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Screen from '../Screen';
 import useMonth from '../../hooks/useMonth';
 import useWeekDay from '../../hooks/useWeekDay';
