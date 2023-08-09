@@ -1,28 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState, useNavigation } from 'react';
 
 import colors from '../../config/colors';
 import AppText from '../AppText';
+import useWeekDay from '../../hooks/useWeekDay';
 
-export default function DateListItem({ date }) {
+const schedule = {};
+
+export default function DateListItem({ date, onPress }) {
   const componentDate = new Date(date);
 
-  const [year, setYear] = useState('');
-  const [month, setMonth] = useState('');
-  const [day, setDay] = useState('');
+  const day = useWeekDay(componentDate);
+
+  const [dateDay, setDateDay] = useState('');
 
   useEffect(() => {
-    setYear(componentDate.getFullYear());
-    setMonth(componentDate.getMonth());
-    setDay(componentDate.getDay());
+    setDateDay(componentDate.getDate());
   }, []);
 
   return (
-    <View style={styles.container}>
-      <AppText>{year}</AppText>
-      <AppText>{month}</AppText>
-      <AppText>{day}</AppText>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.container}>
+        <AppText style={styles.text}>
+          {day} {dateDay}
+        </AppText>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -31,5 +34,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     margin: 10,
     padding: 20,
+    minWidth: 140,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    textAlign: 'center',
+    color: colors.light,
   },
 });

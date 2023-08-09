@@ -3,9 +3,15 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import AppText from '../AppText';
 import DateListItem from './DateListItem';
+import useMonth from '../../hooks/useMonth';
+import colors from '../../config/colors';
+import { useNavigation } from '@react-navigation/native';
 
 export default function AppDatePicker() {
   const [weekdays, setWeekdays] = useState([]);
+  const currentYear = new Date().getFullYear();
+  const currentMonth = useMonth(new Date());
+  const navigation = useNavigation();
 
   const getAllWeekdaysOfMonth = () => {
     const today = new Date();
@@ -13,7 +19,11 @@ export default function AppDatePicker() {
     const weekdays = [];
 
     // Get the first day of the current month
-    const firstDay = new Date(today.getFullYear(), currentMonth, 1);
+    const firstDay = new Date(
+      today.getFullYear(),
+      currentMonth,
+      today.getDate()
+    );
 
     // Get the last day of the current month
     const lastDay = new Date(today.getFullYear(), currentMonth + 1, 0);
@@ -37,12 +47,25 @@ export default function AppDatePicker() {
   console.log(weekdays);
   return (
     <View style={styles.container}>
-      <AppText>Ecoge una fecha </AppText>
+      <View style={styles.subHeadingContainer}>
+        <AppText style={styles.subHeading}>Ecoge una fecha </AppText>
+        <AppText style={styles.subHeading}>
+          {currentMonth} {currentYear}
+        </AppText>
+      </View>
+
       <View style={styles.daysContainer}>
         <FlatList
           data={weekdays}
           renderItem={({ item }) => {
-            return <DateListItem date={item} />;
+            return (
+              <DateListItem
+                date={item}
+                onPress={() => {
+                  navigation.navigate('timeScheduleScreen', new Date(item));
+                }}
+              />
+            );
           }}
           numColumns={2}
         />
@@ -57,7 +80,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    backgroundColor: 'red',
-    paddingBottom: 130,
+    paddingBottom: 250,
+    marginTop: 10,
+  },
+  subHeadingContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  subHeading: {
+    fontSize: 20,
+    color: colors.medium,
   },
 });

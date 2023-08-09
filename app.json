@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "urbinaapp-js",
+    "owner": "aklass",
     "slug": "urbinaapp-js",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,6 +26,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c3259bba-f38f-4a19-a626-9162b91d40fd"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c3259bba-f38f-4a19-a626-9162b91d40fd"
+      }
     }
   }
 }

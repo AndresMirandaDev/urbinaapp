@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   iconStyle: {
     borderStyle: 'solid',
     borderWidth: 1,
-    borderRadius: '50%',
+    borderRadius: 50,
     padding: 10,
     borderColor: colors.secondary,
     marginHorizontal: 30,

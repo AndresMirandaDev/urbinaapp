@@ -14,6 +14,7 @@ export default {
   subHeading: {
     fontSize: 20,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Helvetica',
+    textAlign: 'center',
   },
-  screenPadding: 30,
+  screenPadding: 35,
 };
