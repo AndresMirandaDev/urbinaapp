@@ -5,8 +5,6 @@ import colors from '../../config/colors';
 import AppText from '../AppText';
 import useWeekDay from '../../hooks/useWeekDay';
 
-const schedule = {};
-
 export default function DateListItem({ date, onPress }) {
   const componentDate = new Date(date);
 

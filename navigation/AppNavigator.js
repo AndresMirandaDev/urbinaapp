@@ -1,4 +1,4 @@
-import { DrawerContent, createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import colors from '../config/colors';
@@ -7,9 +7,8 @@ import HeadBar from '../components/HeadBar';
 import BottomTabNavigator from './BottomTabNavigator';
 import RegisterPatientScreen from '../screens/RegisterPatientScreen';
 
-import VisitsScreen from '../screens/visitScreens/VisitsScreen';
 import VisitsNavigator from './VisitsNavigator';
-import RecommendationsScreen from '../screens/recommendationsScreens/RecommendationsScreen';
+import PatientHistoryNavigator from './patientHistoryNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -40,12 +39,70 @@ export default function AppNavigator({ navigation }) {
         },
       }}
     >
-      <Drawer.Screen name="Inicio" component={BottomTabNavigator} />
+      <Drawer.Screen
+        name="Inicio"
+        component={BottomTabNavigator}
+        options={{
+          drawerIcon: ({ focused }) => {
+            return (
+              <MaterialCommunityIcons
+                name="home"
+                size={30}
+                color={focused ? colors.primary : colors.secondary}
+              />
+            );
+          },
+          drawerActiveTintColor: colors.primary,
+        }}
+      />
       <Drawer.Screen
         name="Registro de pacientes"
         component={RegisterPatientScreen}
+        options={{
+          drawerIcon: ({ focused }) => {
+            return (
+              <MaterialCommunityIcons
+                name="form-select"
+                size={30}
+                color={focused ? colors.primary : colors.secondary}
+              />
+            );
+          },
+          drawerActiveTintColor: colors.primary,
+        }}
       />
-      <Drawer.Screen name="Citas" component={VisitsNavigator} />
+      <Drawer.Screen
+        name="Citas"
+        component={VisitsNavigator}
+        options={{
+          drawerIcon: ({ focused }) => {
+            return (
+              <MaterialCommunityIcons
+                name="calendar"
+                size={30}
+                color={focused ? colors.primary : colors.secondary}
+              />
+            );
+          },
+          drawerActiveTintColor: colors.primary,
+        }}
+      />
+      <Drawer.Screen
+        name="Historial de pacientes"
+        component={PatientHistoryNavigator}
+        options={{
+          drawerIcon: ({ focused }) => {
+            return (
+              <MaterialCommunityIcons
+                name="history"
+                size={30}
+                color={focused ? colors.primary : colors.secondary}
+              />
+            );
+          },
+          drawerActiveTintColor: colors.primary,
+        }}
+      />
     </Drawer.Navigator>
   );
 }

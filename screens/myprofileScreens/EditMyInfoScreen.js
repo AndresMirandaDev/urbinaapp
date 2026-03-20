@@ -6,6 +6,8 @@ import AppText from '../../components/AppText';
 import AppForm from '../../components/forms/AppForm';
 import AppFormField from '../../components/forms/AppFormField';
 import SubmitButton from '../../components/forms/SubmitButton';
+import { LinearGradient } from 'expo-linear-gradient';
+import colors from '../../config/colors';
 
 //mock data
 const user = {
@@ -19,6 +21,12 @@ const user = {
 export default function EditMyInfoScreen() {
   return (
     <View style={styles.container}>
+      <LinearGradient
+        colors={[colors.secondaryOpacity, colors.light]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.background}
+      />
       <AppText style={appStyles.subHeading}>Actualizar mis datos</AppText>
       <View style={styles.formContainer}>
         <AppForm
@@ -66,6 +74,7 @@ export default function EditMyInfoScreen() {
 }
 
 const styles = StyleSheet.create({
+  background: appStyles.gradientBackground,
   container: {
     padding: appStyles.screenPadding,
     minHeight: '100%',
